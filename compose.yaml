@@ -1,0 +1,6 @@
+services:
+    sneed:
+        build: .
+        container_name: sneed.city
+        ports:
+            - 5000:5000
