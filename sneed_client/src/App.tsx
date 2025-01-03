@@ -32,7 +32,6 @@ function App() {
 
   return (
     <>
-      <NavBar clover={clover} map={map} play={play} handleClover={handleClover} handleMap={handleMap} />
       <div id="container">
         {page === 'welcome' && <div id="welcome" onClick={handleWelcome}>Enter</div>}
         {page === 'clover' &&
