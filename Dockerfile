@@ -9,6 +9,8 @@ ADD . /app
 WORKDIR /app/sneed_client
 RUN npm ci
 RUN npm run build
+RUN ls -l /app/sneed_client/dist/
+RUN ls -l /app/sneed_server/
 RUN cp -r /app/sneed_client/dist/* /app/sneed_server/static/
 
 WORKDIR /app/sneed_server
