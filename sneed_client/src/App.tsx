@@ -1,13 +1,15 @@
 import {useState} from 'react';
 import ReactPlayer from 'react-player';
 import './App.css'
-import NavBar from './components/NavBar/NavBar';
+//import NavBar from './components/NavBar/NavBar';
 
 
 function App() {
+/*
   const [clover, setClover] = useState('active')
   const [map, setMap] = useState('')
   const [play, setPlay] = useState('hidden')
+*/
   const [page, setPage] = useState('welcome')
 
   const handleWelcome = () => {
@@ -15,21 +17,24 @@ function App() {
   }
 
   const handleClover = () => {
-    setPage('clover')
+/*
     setClover('active')
     setMap('')
     setPlay('hidden')
+*/
+    setPage('clover')
     document.title = '/v/ plays clover';
   }
 
+/*
   const handleMap = () => {
-    setPage('map')
     setMap('active')
     setClover('')
     setPlay('')
+    setPage('map')
     document.title = 'play.sneed.city';
   }
-
+*/
   return (
     <>
       <div id="container">
