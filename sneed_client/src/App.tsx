@@ -38,7 +38,7 @@ function App() {
         {page === 'clover' &&
           <div id="clover">
             <h2 id="title">/v/ plays clover</h2>
-            <ReactPlayer id="video" url="http://192.168.11.1:8080/hls/index.m3u8" width="568px" height="536px" playing={true}/>
+            <ReactPlayer id="video" url="http://clover.sneed.city/hls/index.m3u8" width="568px" height="536px" playing={true}/>
           </div>}
         {page === 'map' && <iframe src="https://map.sneed.city/"></iframe>}
       </div>
