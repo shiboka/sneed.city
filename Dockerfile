@@ -9,7 +9,7 @@ ADD . /app
 WORKDIR /app/sneed_client
 RUN npm ci
 RUN npm run build
-COPY /app/sneed_client/dist/ /app/sneed_server/static/
+RUN cp -r /app/sneed_client/dist/* /app/sneed_server/static/
 
 WORKDIR /app/sneed_server
 RUN pip install -r requirements.txt
