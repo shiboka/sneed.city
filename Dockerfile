@@ -5,13 +5,12 @@ RUN curl -sL https://deb.nodesource.com/setup_22.x | bash -
 RUN apt install -y nodejs
 
 ADD . /app
+RUN mkdir -p /app/sneed_server/static
 
 WORKDIR /app/sneed_client
 RUN npm ci
 RUN npm run build
-RUN ls -l /app/sneed_client/dist/
-RUN ls -l /app/sneed_server/
-RUN cp -r /app/sneed_client/dist/* /app/sneed_server/static/
+RUN cp -r dist/* /app/sneed_server/static/
 
 WORKDIR /app/sneed_server
 RUN pip install -r requirements.txt
