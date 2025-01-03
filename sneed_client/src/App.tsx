@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import ReactPlayer from 'react-player';
 import './App.css'
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
   const [clover, setClover] = useState('active')
@@ -30,17 +31,7 @@ function App() {
 
   return (
     <>
-      <ul>
-        <li>
-          <a className={clover} onClick={handleClover}>clover</a>
-        </li>
-        <li>
-          <a className={map} onClick={handleMap}>minecraft</a>
-        </li>
-        <li id="play" className={play}>
-          <span>play.sneed.city</span>
-        </li>
-      </ul>
+      <NavBar clover={clover} map={map} play={play} handleClover={handleClover} handleMap={handleMap} />
       <div id="container">
         {page === 'welcome' && <div id="welcome" onClick={handleWelcome}>Enter</div>}
         {page === 'clover' &&
