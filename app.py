@@ -1,6 +1,6 @@
-from flask import Flask, current_app, redirect, request
+from flask import Flask, current_app
 
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__, static_folder='dist', static_url_path='')
 
 @app.route('/')
 def app_home():  # put application's code here
