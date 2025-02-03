@@ -1,16 +1,15 @@
-FROM python:3.12-slim
+FROM alpine:latest
 
 ADD . /app
 WORKDIR /app
-RUN mkdir -p static
 
-RUN apt update && apt install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_22.x | bash -
-RUN apt install -y nodejs
+RUN apk update && apk add --update npm py3-pip
 
 RUN npm ci
 RUN npm run build
 
+RUN python3 -m venv venv
+RUN . venv/bin/activate
 RUN pip install -r requirements.txt
 
 ENTRYPOINT [ "gunicorn" ]
